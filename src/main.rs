@@ -5,7 +5,9 @@ fn add_habit(habit_list: Vec<String>, habit: &str) -> Vec<String> {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let new_habit = std::env::args().nth(1).expect("no habit given");
+    let updated_list = add_habit(vec![], &new_habit);
+    println!("{}", updated_list[0]);
 }
 
 #[test]
